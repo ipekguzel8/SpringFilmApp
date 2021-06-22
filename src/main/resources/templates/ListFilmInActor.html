@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Title</title>
+</head>
+
+<body>
+<div th:replace="Layout.html :: body"></div>
+
+<form>
+    <div >
+        <input type="text" id="name">
+        <button>Ara</button>
+    </div>
+</form>
+
+<div style="overflow-x:auto;">
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Rolü</th>
+            <th scope="col">Rol Açıklaması</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="actor : ${actorList}">
+            <td th:text="${actor.getActor().id}"></td>
+            <td th:text="${actor.getActor().name}"></td>
+            <td th:text="${actor.role}"></td>
+            <td th:text="${actor.roleDescription}"></td>
+            <td><a class="btn-edit" th:href="@{/filmActor/editActor/{id}(id=${actor.getActor().id})}">Edit</a></td>
+            <td><a class="btn-delete" th:href="@{/filmActor/deleteActor/{id}(id=${actor.getActor().id})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

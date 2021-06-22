@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Title</title>
+</head>
+
+<body>
+<div th:replace="Layout.html :: body"></div>
+
+    <form>
+        <div >
+        <input type="text" id="name">
+        <button>Ara</button>
+        </div>
+    </form>
+
+<div style="overflow-x:hidden;">
+    <div ><a class="btn-plus" th:href="@{/api/add}"><i class="fas fa-plus"></i>Film Ekle</a></div>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Year</th>
+            <th scope="col">Media</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="film : ${filmList}">
+            <td th:text="${film.id}"></td>
+            <td th:text="${film.name}"></td>
+            <td th:text="${film.type}"></td>
+            <td th:text="${film.year}"></td>
+            <td th:text="${film.media}"></td>
+            <td th:text="${film.description}"></td>
+
+            <td><a class="btn-edit" th:href="@{/api/edit/{id}(id=${film.id})}">Edit</a></td>
+            <td><a class="btn-delete" th:href="@{/api/delete/{id}(id=${film.id})}">Delete</a></td>
+            <td><a class="btn-edit" th:href="@{/filmActor/addActor/{id}(id=${film.id})}">Oyuncu Ekle</a></td>
+            <td><a class="btn-edit" th:href="@{/filmActor/listActor/{id}(id=${film.id})}">Oyuncu Listele</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

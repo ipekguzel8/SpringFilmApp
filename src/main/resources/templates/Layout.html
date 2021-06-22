@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Title</title>
+</head>
+<body>
+<header>
+  <h1>Film Uygulaması</h1>
+  <h2>Hoş Geldiniz </h2>
+</header>
+<nav>
+  <ul class="menubar">
+    <li ><a href="#">Anasayfa</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Listele</a>
+      <div class="dropdown-content">
+        <a th:href="@{/api/films}">Film</a>
+        <a th:href="@{/user/users}">Kullanıcı</a>
+        <a th:href="@{/actor/actors}">Aktör</a>
+      </div>
+    </li>
+    <li><a href="#">Giriş Yap</a></li>
+    <li><a href="#">İletişim</a></li>
+  </ul>
+</nav>
+</body>
+</html>

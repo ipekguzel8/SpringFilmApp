@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link th:href="@{/css/styleupdate.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <form action="#" th:action="@{/user/add}"
+        th:object="${userAdd}" method="post">
+    <label>Username</label>
+    <input type="text" th:field="*{username}" id="username">
+    <label>Password</label>
+    <input type="text" th:field="*{password}" id="password">
+    <br/>
+    <select th:field="*{authorization}" id="color">
+      <option th:each="authOpt : ${T(com.ozguryaz.filmproject.entities.Authorization).values()}"
+              th:value="${authOpt}" th:text="${authOpt}"></option>
+
+    </select>
+    <input type="submit" class="btn btn-success" value="Ekle">
+  </form>
+</div>
+</body>
+</html>

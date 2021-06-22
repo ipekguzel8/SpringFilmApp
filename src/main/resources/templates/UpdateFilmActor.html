@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link th:href="@{/css/styleupdate.css}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <span th:text="'Hello, ' + ${actor}"></span>
+    <form  action="#" th:action="@{/filmActor/updateActor/{id}(id=${UpdateFA.id})}"
+           th:object="${UpdateFA}" method="post">
+        <label >Rolü</label>
+        <input type="text" th:field="*{role}" id="name" >
+        <br/>
+        <label>Rol Açıklaması</label>
+        <input type="text"  th:field="*{roleDescription}" id="type">
+        <br/>
+        <button type="submit" class="btn btn-info">Register</button>
+    </form>
+</div>
+</body>
+</html>

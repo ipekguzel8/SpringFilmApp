@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div th:include="Layout.html :: body"></div>
+<div style="overflow-x:hidden;">
+  <div ><a class="btn-plus" th:href="@{/user/add}"><i class="fas fa-plus"></i>Kullanıcı Ekle</a></div>
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Authorization</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userList}">
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.username}"></td>
+      <td th:text="${user.password}"></td>
+      <td th:text="${user.authorization}"></td>
+      <td><a class="btn-edit" th:href="@{/user/edit/{id}(id=${user.id})}">Edit</a></td>
+      <td><a class="btn-delete" th:href="@{/user/delete/{id}(id=${user.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>

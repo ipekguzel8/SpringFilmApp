@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Title</title>
+</head>
+
+<body>
+<div th:replace="Layout.html :: body"></div>
+
+<form>
+  <div >
+    <input type="text" id="name">
+    <button>Ara</button>
+  </div>
+</form>
+
+<div style="overflow-x:hidden;">
+  <div ><a class="btn-plus" th:href="@{/actor/add}"><i class="fas fa-plus"></i>Oyuncu Ekle</a></div>
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="actor : ${actorList}">
+      <td th:text="${actor.id}"></td>
+      <td th:text="${actor.name}"></td>
+
+      <td><a class="btn-edit" th:href="@{/actor/edit/{id}(id=${actor.id})}">Edit</a></td>
+      <td><a class="btn-delete" th:href="@{/actor/delete/{id}(id=${actor.id})}">Delete</a></td>
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>
