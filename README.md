@@ -4,7 +4,7 @@
 ![Thymeleaf](https://miro.medium.com/max/8218/1*Z_Hy_jgKtu0HFGhNMxGTKw.png)
 ![Tomcat](https://sabahattindevrez.com/wp-content/uploads/2018/11/apache-tomcat-rce-exploit.png)
 ![Java](https://www.oracle.com/a/tech/img/cb88-java-logo-001.jpg)
-
+![Mysql](https://www.hostbulucu.com/wp-content/uploads/2013/07/mysql-veritabani-tam.jpg)
 ***Projede kullanılanlar*** 
 **Maven** Java platformunda yer alan komutların derlenmesi sırasında kullanılan otomasyon ve inşa aracıdır.
 **Spring Framework*** Spring Framework Java için geliştirilmiş, açık kaynak olan bir uygulama geliştirme framework'üdür. Spring Framework'ün temel özellikleri harhangi bir Java uygulaması tarafından kullanılabilmektedir. 
